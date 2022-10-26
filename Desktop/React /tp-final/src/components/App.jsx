@@ -1,12 +1,14 @@
 import './app.css'
 import FormBusqueda from './FormBusqueda/FormBusqueda';
 import Navbar from './Navbar/Navbar';
-
+import ItemListContainer from './ItemListContainer/ItemListContainer';
+import CartWidget from './CartWidget/CartWidget';
 const App = () => {
     return (
         <>
         <Navbar/>
-        <FormBusqueda busqueda ={"Login"} />
+        <ItemListContainer greeting ={"greeting"} />
+        <CartWidget/>
         </>
 
     );
@@ -14,3 +16,4 @@ const App = () => {
 
 export default App;
 
+/* <FormBusqueda busqueda ={"Login"} /> */
