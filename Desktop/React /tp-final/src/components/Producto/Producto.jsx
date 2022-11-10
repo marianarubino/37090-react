@@ -1,18 +1,23 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
+import DetalleProducto from '../DetalleProducto/DetalleProducto';
 import { consultarBDD } from '../../assets/funciones';
 
 const Producto = () => {
     
     const [producto, setProducto] = useState([]);
-
+    const {id} = useParams()
     useEffect(()=>{
-        consultarBDD('./json/productos.json').then(productos=> console.log(productos))
+        consultarBDD('./json/productos.json').then(productos=> {
+            const prod = productos.find (productoArray=> productoArray.id === parseInt(id))
+            setProducto (prod)
+        })    
     }, []);
 
     return (
         <div>
-            <h1>Producto</h1>
+            <div className = "card mb-3 container detalleProducto"></div>
+            <DetalleProducto producto= {producto}/>
         </div>
     );
 }

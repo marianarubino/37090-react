@@ -1,0 +1,8 @@
+.cardProducto {
+    width:18 rem;
+    margin: 4px;
+}
+
+.detalleProducto{
+    max-width: 540px;
+}
